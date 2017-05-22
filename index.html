@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+
+<html lang="pt">
+	<head>
+		<title>CBMMG - Cálculo de ADE</title>
+
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+  		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  		<link rel="stylesheet" type="text/css" href="main.css">
+  		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  		<script type="text/javascript" src="constants.js"></script>
+  		<script type="text/javascript" src="script.js"></script>
+	</head>
+	<body>
+		<div class="container-fluid" id="dados_iniciais">
+			<div class="row">
+				<div class="col-xs-12"><h1>Cálculo de ADE</h1></div>
+			</div>
+			<div class="row">
+				<div class="col-xs-6"><p style="text-align: right">Graduação/Posto:</p></div>
+				<div class="col-xs-6 input-group" id="postos_graduacoes"></div>
+				</div>
+			<div class="row">
+				<div class="col-xs-6"><p style="text-align: right">Data de entrada na corporação:</p></div>
+				<div class="col-xs-6 input-group">
+					<input style="height:100%" type="date" id="data_entrada" min="2003-07-15">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-6"><p style="text-align: right">Quantidade de anos para o cálculo:</p></div>
+				<div class="col-xs-6 input-group">
+					<input style="height:100%" type="number" id="qtd_anos" min="1" max="30">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-12">
+					<center><button id="bt_simular" type="button" class="btn btn-danger">Iniciar simulação</button></center>
+				</div>
+			</div>
+		</div>
+
+		<div class="container-fluid" id="dados_adis" style="display:none">
+		</div>
+
+		<br/>
+		<div class="container-fluid row" id="resultado_ade" style="display:none">
+			<div id="resultado_ade_padrao" style="display:none">
+				<h3 style="text-align: center">Resultado de ADE Padrão</h3>
+				<div class="row">
+					<div class="col-xs-6"><p style="text-align: right; font-weight: bold">Quantidade de ADIs satisfatórias: </p></div>
+					<div class="col-xs-6 input-group"><p style="text-align: left" id="qtd_adis_satisfatorias"/></div>
+				</div>
+				<div class="row">
+					<div class="col-xs-6"><p style="text-align: right; font-weight: bold">Percentual de ADE concorrido: </p></div>
+					<div class="col-xs-6 input-group"><p style="text-align: left" id="ade"/></div>
+				</div>
+				<div class="row">
+					<div class="col-xs-6"><p style="text-align: right; font-weight: bold">Percentual de ADE obtido: </p></div>
+					<div class="col-xs-6 input-group"><p style="text-align: left" id="ade_obtido"/></div>
+				</div>
+				<div class="row">
+					<div class="col-xs-6"><p style="text-align: right; font-weight: bold">Salário bruto sem ADE: </p></div>
+					<div class="col-xs-6 input-group"><p style="text-align: left" id="salario_inicial"/></div>
+				</div>
+				<div class="row">
+					<div class="col-xs-6"><p style="text-align: right; font-weight: bold">Aumento devido a ADE: </p></div>
+					<div class="col-xs-6 input-group"><p style="text-align: left" id="aumento_ade"/></div>
+				</div>
+				<div class="row">
+					<div class="col-xs-6"><p style="text-align: right; font-weight: bold">Salário bruto com ADE: </p></div>
+					<div class="col-xs-6 input-group"><p style="text-align: left" id="salario_final"/></div>
+				</div>
+			</div>
+			<div id="resultado_ade_aposentadoria" style="display:none">
+				<h3 style="text-align: center">Resultado de ADE para Aposentadoria</h3>
+				<div class="row">
+					<div class="col-xs-6"><p style="text-align: right; font-weight: bold">Quantidade de ADIs satisfatórias: </p></div>
+					<div class="col-xs-6 input-group"><p style="text-align: left" id="qtd_adis_aposentadoria"/></div>
+				</div>
+				<div class="row">
+					<div class="col-xs-6"><p style="text-align: right; font-weight: bold">Percentual de ADE obtido: </p></div>
+					<div class="col-xs-6 input-group"><p style="text-align: left" id="ade_aposentadoria"/></div>
+				</div>
+				<div class="row">
+					<div class="col-xs-6"><p style="text-align: right; font-weight: bold">Salário bruto sem ADE: </p></div>
+					<div class="col-xs-6 input-group"><p style="text-align: left" id="salario_inicial_aposentadoria"/></div>
+				</div>
+				<div class="row">
+					<div class="col-xs-6"><p style="text-align: right; font-weight: bold">Aumento devido a ADE: </p></div>
+					<div class="col-xs-6 input-group"><p style="text-align: left" id="aumento_ade_aposentadoria"/></div>
+				</div>
+				<div class="row">
+					<div class="col-xs-6"><p style="text-align: right; font-weight: bold">Salário bruto para aposentadoria com ADE: </p></div>
+					<div class="col-xs-6 input-group"><p style="text-align: left" id="salario_aposentadoria"/></div>
+				</div>
+			</div>
+
+		</div>
+	</body>
+</html>
