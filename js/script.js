@@ -2,6 +2,7 @@ $(document).ready(function() {
 	var posto_graducao, data, qtd_anos, adis, adis_preenchidos;
 	$("#data_entrada").val(getCurrentDate());
 	createSelect();
+	$("#rodape").hide();
 
 	$("#bt_simular").click(function() {
 		posto_graducao = $("#postos_graduacoes option:selected").text();
@@ -16,6 +17,7 @@ $(document).ready(function() {
 			organizeADIStructure(qtd_anos, data, adis);
 			$("#dados_adis").show();
 			$("#resultado_ade").hide();
+			$("#rodape").hide();
 		} else {
 			clearData();
 		}
@@ -83,8 +85,8 @@ $(document).ready(function() {
 		var salario_posto_grad = calculateSalary(posto_graducao);
 		var resultado_calculo_padrao = calculateADE(adis, salario_posto_grad, qtd_anos);
 		$("#resultado_ade").show();
+		$("#rodape").show();
 
-		console.log(adis);
 		if(qtd_anos < 30) {
 			$("#qtd_adis_satisfatorias").html(resultado_calculo_padrao.adis_satisfatorias + '.');
 			$("#ade").html((resultado_calculo_padrao.ade*100) + '%.');
@@ -176,9 +178,9 @@ function createTitleDiv() {
 function createDataInputs(val_inicial, val_final, data) {
 	for(var i = val_inicial; i < val_final; i++) {
 		var rowDiv = $("<div class=\"row\" id=\"div_adi_" + (i+1) + "\"/>)");
-		var insideDiv = $("<div class=\"col-xs-12\" />)");
+		var insideDiv = $("<div class=\"col-xs-12 \" />)");
 		var text = (i+1) + 'º) ' + calculateDate(data, i+1) + ':';
-		var dateDiv = $("<div class=\"col-xs-7\"><p style=\"text-align: right\">" + text + "</p></div>");
+		var dateDiv = $("<div class=\"col-xs-6\"><p style=\"text-align: right\">" + text + "</p></div>");
 		var select = $("<select id=\"adi_" + (i+1) + "\" class=\"selectpicker\" />");
 		porcentagens_adi.forEach(function(porcentagem_adi) {
 			$("<option />", {text: porcentagem_adi.texto, value: porcentagem_adi.valor}).appendTo(select);
@@ -316,6 +318,7 @@ function clearData() {
 	}
 	$("#dados_adis").hide();
 	$("#resultado_ade").hide();
+	$("#rodape").hide();
 }
 
 function removeDataInputs(antiga_qtd_anos, qtd_anos, adis) {

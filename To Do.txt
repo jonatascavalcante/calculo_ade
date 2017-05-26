@@ -1,2 +1,8 @@
 Faltante:
 - Colocar mensagem de erro no campo de data e de anos para simular
+
+
+- ajustar input
+- caixas
+- tabela resultado
+- alinhamento colunas

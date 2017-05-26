@@ -1,2 +1,0 @@
-Quando começa com um valor inválida na quantidade de anos (< 3)
-e muda pra um válido, aparece ADIS anteriores duas vezes.
