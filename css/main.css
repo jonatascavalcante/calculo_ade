@@ -22,3 +22,8 @@ h1 {
 	color: #636c72;
 	text-align: center;
 }
+
+.input-iniciais {
+	height: 100%;
+	padding-left: 0;
+}

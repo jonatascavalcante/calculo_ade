@@ -131,7 +131,7 @@ function verifyFields(qtd_anos, data) {
 }
 
 function createSelect() {
-	var select = $("<select id=\"postos_graduacoes\" class=\"selectpicker\" />");
+	var select = $("<select id=\"postos_graduacoes\" class=\"selectpicker input-iniciais\" />");
 	hierarquia.forEach(function(hierarquico) {
 		var optgroup = $("<optgroup />", {label: hierarquico.denominacao});
 		hierarquico.integrantes.forEach(function(integrante) {
